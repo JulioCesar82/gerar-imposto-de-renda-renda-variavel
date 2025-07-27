@@ -1,0 +1,37 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug GGRC Test",
+      "runtimeExecutable": "npm", // Or "yarn" or directly "node"
+      "runtimeArgs": [
+        "run", // Argument for npm/yarn to run a script
+        "test", // Your test script name from package.json
+        "--", // Separator for arguments passed to the script
+        "-i", // Jest flag: Run tests sequentially (important for debugging)
+        "--no-cache", // Jest flag: Disable cache
+        // Specify the exact test file path relative to the project root
+        "src/infrastructure/adapters/__tests__/calculation/GGRC.test.ts"
+        // You might need to adjust the path separator for Windows (\) if needed,
+        // but forward slashes often work. Test what works for your setup.
+        // Alternatively, use Jest's -t flag for test name patterns if needed:
+        // "-t", "^GGRC Asset Calculation"
+      ],
+      "console": "integratedTerminal", // Show output in VS Code terminal
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229 // Default Node.js debug port
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/JulioCesar82/gerar-imposto-de-renda-renda-variavel/static/css/main.eaa1b8ac.css",
+    "main.js": "/JulioCesar82/gerar-imposto-de-renda-renda-variavel/static/js/main.957cf6d0.js",
+    "index.html": "/JulioCesar82/gerar-imposto-de-renda-renda-variavel/index.html",
+    "main.eaa1b8ac.css.map": "/JulioCesar82/gerar-imposto-de-renda-renda-variavel/static/css/main.eaa1b8ac.css.map",
+    "main.957cf6d0.js.map": "/JulioCesar82/gerar-imposto-de-renda-renda-variavel/static/js/main.957cf6d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eaa1b8ac.css",
+    "static/js/main.957cf6d0.js"
+  ]
+}
