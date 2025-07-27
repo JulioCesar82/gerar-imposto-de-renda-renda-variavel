@@ -1,0 +1,3 @@
+O arquivo 'RandomDBKFileGenerator.ts' na verdade tem que apenas randomizar os inputs para dentro da classe 'DBKFileEditor.ts'. Neste momento as duas classes estão meio que iguais...
+
+Basicamente vou ter que compartilhar as estruturas entre as duas classes e apenas manter os Random dentro da 'RandomDBKFileGenerator.ts'

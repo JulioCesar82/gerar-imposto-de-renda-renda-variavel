@@ -1,0 +1,9 @@
+{
+  "name": "excel-examiner",
+  "version": "1.0.0",
+  "description": "Script to examine Excel files",
+  "type": "module",
+  "main": "examine-excel.js",
+  "author": "",
+  "license": "MIT"
+}

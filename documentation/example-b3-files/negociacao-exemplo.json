@@ -1,0 +1,79 @@
+[
+    {
+        "Data do Negócio": "23/04/2025",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado Fracionário",
+        "Prazo/Vencimento": "-",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Código de Negociação": "EXMP3F",
+        "Quantidade": "70",
+        "Preço": "20.00",
+        "Valor": "1400.00"
+    },
+    {
+        "Data do Negócio": "11/04/2025",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado à Vista",
+        "Prazo/Vencimento": "-",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Código de Negociação": "EXMP4",
+        "Quantidade": "100",
+        "Preço": "10.00",
+        "Valor": "1000.00"
+    },
+    {
+        "Data do Negócio": "08/04/2025",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado à Vista",
+        "Prazo/Vencimento": "-",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Código de Negociação": "FIIX11",
+        "Quantidade": "15",
+        "Preço": "80.00",
+        "Valor": "1200.00"
+    },
+    {
+        "Data do Negócio": "06/07/2022",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado Fracionário",
+        "Prazo/Vencimento": "-",
+        "Instituição": "OUTRA CORRETORA EXEMPLO",
+        "Código de Negociação": "ATIV3F",
+        "Quantidade": "40",
+        "Preço": "18.00",
+        "Valor": "720.00"
+    },
+    {
+        "Data do Negócio": "29/06/2022",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado à Vista",
+        "Prazo/Vencimento": "-",
+        "Instituição": "OUTRA CORRETORA EXEMPLO",
+        "Código de Negociação": "FIIY11",
+        "Quantidade": "15",
+        "Preço": "60.00",
+        "Valor": "900.00"
+    },
+    {
+        "Data do Negócio": "17/11/2020",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado à Vista",
+        "Prazo/Vencimento": "-",
+        "Instituição": "CORRETORA ANTIGA EXEMPLO S.A.",
+        "Código de Negociação": "FIIZ11",
+        "Quantidade": "1",
+        "Preço": "90.00",
+        "Valor": "90.00"
+    },
+    {
+        "Data do Negócio": "04/11/2020",
+        "Tipo de Movimentação": "Compra",
+        "Mercado": "Mercado Fracionário",
+        "Prazo/Vencimento": "-",
+        "Instituição": "CORRETORA ANTIGA EXEMPLO S.A.",
+        "Código de Negociação": "BANC4F",
+        "Quantidade": "5",
+        "Preço": "20.00",
+        "Valor": "100.00"
+    }
+]

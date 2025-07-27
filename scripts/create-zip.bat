@@ -1,0 +1,6 @@
+@echo off
+echo Criando arquivo ZIP do projeto...
+node create-zip.js
+echo.
+echo Pressione qualquer tecla para sair...
+pause > nul

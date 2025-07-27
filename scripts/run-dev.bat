@@ -1,0 +1,3 @@
+@echo off
+echo Iniciando aplicacao em modo de desenvolvimento...
+npm run dev

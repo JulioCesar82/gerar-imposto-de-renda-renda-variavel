@@ -1,0 +1,6 @@
+@echo off
+echo Executando testes com cobertura...
+npm run test:coverage
+echo.
+echo Pressione qualquer tecla para sair...
+pause > nul

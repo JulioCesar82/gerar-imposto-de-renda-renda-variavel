@@ -1,0 +1,75 @@
+RESUMO DO QUE É O SISTEMA PARA UM AMIGO:
+
+Sabe aquela parte chata do Imposto de Renda onde você tem que declarar todas as suas Ações e Fundos Imobiliários (FIIs)? Calcular preço médio, lucro, prejuízo, declarar dividendos, JCP, tudo na mão?
+
+Então, estamos criando um aplicativo para automatizar exatamente isso.
+
+A ideia é que você pegue seus extratos de movimentação e negociação lá do portal da B3 (a bolsa de valores), faça o upload desses arquivos no nosso aplicativo.
+
+Aí, o aplicativo vai ler tudo: suas compras, vendas, dividendos recebidos, JCP, eventos como desdobramentos, etc. Ele vai fazer todas as contas complicadas (cálculo de custo médio, apuração de lucro/prejuízo conforme as regras da Receita, separando o que é isento e o que não é).
+
+No final, ele gera aquele arquivo (.DEC) que você pode importar direto no programa oficial da Receita Federal. Esse arquivo já vai preencher automaticamente as fichas de 'Bens e Direitos', 'Rendimentos Isentos', 'Rendimentos Sujeitos à Tributação Exclusiva' e 'Renda Variável' com todas as informações das suas ações e FIIs.
+
+O objetivo é simplificar muito essa parte da declaração, economizar tempo e diminuir a chance de erros.
+
+--
+
+RESUMO DO QUE É O SISTEMA PARA UMA I.A:
+
+Temos esse sistema:
+
+**Sistema: Gerador de Arquivo de Importação IRPF para Investimentos (Ações e FIIs)**
+
+**Objetivo Principal:** Automatizar a geração do arquivo de importação (`.DEC`) para a Declaração de Imposto de Renda Pessoa Física (DIRPF) no Brasil, especificamente para os dados relacionados a Ações (ações) e Fundos de Investimento Imobiliário (FIIs).
+
+**Entradas (Inputs):**
+
+1.  **Dados de Investimento:**
+    * **Histórico de Negociações:** Tipo (Compra/Venda), Data, Código do Ativo (Ticker), Quantidade, Preço Unitário, Custos/Taxas (opcional/se disponível).
+    * **Histórico de Movimentações/Eventos:** Tipo (Dividendos, JCP, Rendimento FII, Bonificação, Desdobramento, Grupamento, Subscrição, Conversões, etc.), Data, Código do Ativo, Quantidade, Valor Financeiro (se aplicável), Fatores (para eventos específicos).
+    * **Posição Inicial (Opcional):** Posição de custódia (quantidade, custo) em 31/12 do ano anterior ao ano-calendário selecionado.
+2.  **Fonte de Dados (Inicial):** Arquivos extraídos do portal da B3 (ex: `extrato/negociacao`, `extrato/movimentacao`), presumivelmente em formato Excel
+3.  **Parâmetros do Usuário:** Ano-calendário para a declaração, Dados Pessoais do declarante (necessários para o arquivo `.DEC`).
+
+**Processamento Principal (Core Logic):**
+
+1.  **Parsing e Validação:** Ler e interpretar os dados de entrada (Excel). Realizar validações de formato e consistência. Tentar conversão de tipos (CAST), mas falhar a geração do arquivo em caso de erros críticos, fornecendo detalhes.
+2.  **Cálculo de Custo Médio:** Calcular o custo médio de aquisição para cada ativo (Ação/FII), ajustado por taxas/custos (se informados) e eventos corporativos (bonificações, subscrições, grupamentos, desdobramentos).
+3.  **Apuração de Resultados:** Calcular o resultado (lucro/prejuízo) para cada operação de venda no ano-calendário, aplicando as regras de tributação brasileiras:
+    * **Ações:** Considerar isenção de IR para vendas mensais < R$ 20.000,00.
+    * **FIIs:** Lucro sempre tributável.
+4.  **Classificação de Rendimentos:** Identificar e classificar corretamente Dividendos, Juros Sobre Capital Próprio (JCP) e Rendimentos de FIIs.
+5.  **Tratamento de Eventos Específicos:** Processar Juros Sobre Capital creditados e não pagos e Créditos em Trânsito de FIIs para alocação correta em "Bens e Direitos".
+6.  **Agregação e Mapeamento:** Consolidar os dados calculados e mapeá-los para os campos correspondentes do layout do arquivo `.DEC`, conforme especificação da Receita Federal.
+
+**Saída (Output):**
+
+1.  **Arquivo `.DEC`:** Arquivo texto formatado segundo o layout oficial da Receita Federal para o ano-calendário especificado (ex: `Leiaute DIRPF 2023`). O arquivo deve conter dados populados nas seguintes seções (pelo menos):
+    * **Bens e Direitos:**
+        * Código 31 (Ações): CNPJ, Discriminação (incluindo Ticker), Situação em 31/12/(ano-1), Situação em 31/12/(ano).
+        * Código 73 (FIIs): CNPJ, Discriminação (incluindo Ticker), Situação em 31/12/(ano-1), Situação em 31/12/(ano).
+        * Código 59 (Outros Créditos - JCP não pago): CNPJ Fonte Pagadora, Discriminação, Situação em 31/12/(ano-1), Situação em 31/12/(ano). *Nota: Código pode variar, verificar layout.* Originalmente citado 997, mas 59 é comum.
+        * Código 59 (Outros Créditos - Rendimentos FII não pagos): CNPJ Fonte Pagadora, Discriminação, Situação em 31/12/(ano-1), Situação em 31/12/(ano). *Nota: Código pode variar, verificar layout.* Originalmente citado 9999.
+    * **Rendimentos Isentos e Não Tributáveis:**
+        * Código 09 (Lucros e Dividendos): CNPJ Fonte Pagadora, Nome Fonte Pagadora, Valor.
+        * Código 26 (Outros - Rendimentos FII): CNPJ Fonte Pagadora, Nome Fonte Pagadora, Valor. *Nota: Originalmente citado 99, usar código oficial 26.*
+    * **Rendimentos Sujeitos à Tributação Exclusiva/Definitiva:**
+        * Código 10 (JCP): CNPJ Fonte Pagadora, Nome Fonte Pagadora, Valor. *Nota: Originalmente citado 6, usar código oficial 10.*
+    * **Renda Variável - Operações Comuns/Day-Trade:**
+        * Mercado à Vista - Ações: Resultados líquidos mensais (lucro/prejuízo).
+        * Fundos de Investimento Imobiliário (FII): Resultados líquidos mensais (lucro/prejuízo).
+2.  **Relatório de Inconsistências:** Detalhamento de eventuais erros ou dados inconsistentes encontrados durante o processamento.
+3.  **Mecanismo de Download:** Interface para o usuário baixar o arquivo `.DEC` gerado.
+
+**Arquitetura e Implementação (Detalhes Mencionados):**
+
+* **Linguagem:** TypeScript.
+* **Manipulação do Layout:** Utiliza classes como `DBKFileEditor`, `ReaderDBKFileEditor`, `WritterDBKFileEditor` para interagir com a estrutura do arquivo `.DEC` baseada no documento de layout (`IRPF-LeiauteTXT-2023.txt`).
+* **Orquestração:** A classe `GenerateDeclarationUseCase` parece centralizar a lógica de negócio, utilizando outras classes/adaptadores (como `DBKFileGenerator` que usa `WritterDBKFileEditor`) para a geração final.
+* **Testes:** Foco em testes unitários por ativo, carregando dados JSON fragmentados (negociação e movimentação por ativo) para validar cálculos e a geração das seções do `.DEC`. Meta de cobertura de 90%.
+
+**Premissas e Restrições (Versão Inicial - V1):**
+
+* Upload manual de arquivos (sem integração direta com B3).
+* Processamento síncrono.
+* Estrutura que permita execução local (possivelmente com dados em memória).

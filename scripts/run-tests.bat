@@ -1,0 +1,6 @@
+@echo off
+echo Executando testes...
+npm test
+echo.
+echo Pressione qualquer tecla para sair...
+pause > nul

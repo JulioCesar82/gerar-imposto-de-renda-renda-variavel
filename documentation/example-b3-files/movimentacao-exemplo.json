@@ -1,0 +1,162 @@
+[
+    {
+        "Entrada/Saída": "Debito",
+        "Data": "30/04/2025",
+        "Movimentação": "Transferência - Liquidação",
+        "Produto": "EXMP3 - EMPRESA EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "100",
+        "Preço unitário": "25.00",
+        "Valor da Operação": "2500.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "28/04/2025",
+        "Movimentação": "Rendimento",
+        "Produto": "FIIA11 - FII AGRO EXEMPLO",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "200",
+        "Preço unitário": "0.80",
+        "Valor da Operação": "160.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "25/04/2025",
+        "Movimentação": "Transferência - Liquidação",
+        "Produto": "SNEM3 - SANEAMENTO EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "70",
+        "Preço unitário": "20.00",
+        "Valor da Operação": "1400.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "25/04/2025",
+        "Movimentação": "Dividendo",
+        "Produto": "SNEM3 - SANEAMENTO EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "600",
+        "Preço unitário": "0.15",
+        "Valor da Operação": "90.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "25/04/2025",
+        "Movimentação": "Juros Sobre Capital Próprio",
+        "Produto": "SNEM3 - SANEAMENTO EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "600",
+        "Preço unitário": "0.25",
+        "Valor da Operação": "150.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "24/04/2025",
+        "Movimentação": "Transferência - Liquidação",
+        "Produto": "ENRG3 - ENERGIA EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "400",
+        "Preço unitário": "40.00",
+        "Valor da Operação": "16000.00"
+    },
+    {
+        "Entrada/Saída": "Debito",
+        "Data": "24/04/2025",
+        "Movimentação": "Direitos de Subscrição - Não Exercido",
+        "Produto": "FIIL12 - FII LOGISTICA EXEMPLO",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "0",
+        "Preço unitário": " - ",
+        "Valor da Operação": " - "
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "22/04/2025",
+        "Movimentação": "Dividendo",
+        "Produto": "HOLD4 - HOLDING EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "1500",
+        "Preço unitário": "0.10",
+        "Valor da Operação": "150.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "16/04/2025",
+        "Movimentação": "Grupamento",
+        "Produto": "EXMP3 - EMPRESA EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "5.00",
+        "Preço unitário": " - ",
+        "Valor da Operação": " - "
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "16/04/2025",
+        "Movimentação": "Desdobro",
+        "Produto": "EXMP3 - EMPRESA EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "400",
+        "Preço unitário": " - ",
+        "Valor da Operação": " - "
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "14/04/2025",
+        "Movimentação": "Rendimento",
+        "Produto": "FIIM11 - FII MAX EXEMPLO",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "1400",
+        "Preço unitário": "0.10",
+        "Valor da Operação": "140.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "10/04/2025",
+        "Movimentação": "Dividendo",
+        "Produto": "PORT3 - PORTO EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "350",
+        "Preço unitário": "0.10",
+        "Valor da Operação": "35.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "10/04/2025",
+        "Movimentação": "Juros Sobre Capital Próprio",
+        "Produto": "PORT3 - PORTO EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "350",
+        "Preço unitário": "0.30",
+        "Valor da Operação": "105.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "09/04/2025",
+        "Movimentação": "Direito de Subscrição",
+        "Produto": "FIIL12 - FII LOGISTICA EXEMPLO",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "250",
+        "Preço unitário": " - ",
+        "Valor da Operação": " - "
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "07/04/2025",
+        "Movimentação": "Compra",
+        "Produto": "Tesouro Exemplo 2040",
+        "Instituição": "BANCO EXEMPLO S/A",
+        "Quantidade": "2.50",
+        "Preço unitário": "1500.00",
+        "Valor da Operação": "3750.00"
+    },
+    {
+        "Entrada/Saída": "Credito",
+        "Data": "01/04/2025",
+        "Movimentação": "Juros Sobre Capital Próprio",
+        "Produto": "HOLD4 - HOLDING EXEMPLO S/A",
+        "Instituição": "CORRETORA EXEMPLO S/A",
+        "Quantidade": "1500",
+        "Preço unitário": "0.02",
+        "Valor da Operação": "30.00"
+    }
+]
