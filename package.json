@@ -1,7 +1,7 @@
 {
   "name": "irrf-b3-generator",
   "version": "1.1.0",
-  "homepage": "https://github.com/JulioCesar82/gerar-imposto-de-renda-renda-variavel",
+  "homepage": "https://juliocesar82.github.io/gerar-imposto-de-renda-renda-variavel",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
