@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/gerar-imposto-de-renda-renda-variavel/static/css/main.eaa1b8ac.css",
-    "main.js": "/gerar-imposto-de-renda-renda-variavel/static/js/main.957cf6d0.js",
-    "index.html": "/gerar-imposto-de-renda-renda-variavel/index.html",
-    "main.eaa1b8ac.css.map": "/gerar-imposto-de-renda-renda-variavel/static/css/main.eaa1b8ac.css.map",
-    "main.957cf6d0.js.map": "/gerar-imposto-de-renda-renda-variavel/static/js/main.957cf6d0.js.map"
+    "main.css": "/gerar-IR-de-renda-variavel/static/css/main.eaa1b8ac.css",
+    "main.js": "/gerar-IR-de-renda-variavel/static/js/main.957cf6d0.js",
+    "index.html": "/gerar-IR-de-renda-variavel/index.html",
+    "main.eaa1b8ac.css.map": "/gerar-IR-de-renda-variavel/static/css/main.eaa1b8ac.css.map",
+    "main.957cf6d0.js.map": "/gerar-IR-de-renda-variavel/static/js/main.957cf6d0.js.map"
   },
   "entrypoints": [
     "static/css/main.eaa1b8ac.css",
